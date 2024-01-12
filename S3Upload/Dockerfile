@@ -1,6 +1,6 @@
-FROM node:14-alpine3.16
-WORKDIR /app
-COPY package*.json .
+FROM node:17-alpine3.15
+WORKDIR /server
+COPY package*.json ./
 RUN npm i
 COPY . .
 EXPOSE 3002
