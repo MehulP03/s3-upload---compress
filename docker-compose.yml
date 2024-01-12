@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  frontend:
+    build: ./sssuploadfrontend
+    ports:
+      - 3000:3000
+    networks:
+      - connection
+  backend:
+    depends_on:
+      - frontend
+    build: ./S3Upload
+    ports:
+      - 3002:3002
+    networks: 
+      - connection
+networks:
+  connection:
